@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Kauan</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Kauan</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#interesses">Interesses</a></li>
+                <li><a href="#metas">Metas</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="menu-icon" id="menu-icon">
+                &#9776;
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <header>
+            <!-- 1. SUBSTITUA PELO CAMINHO DA SUA IMAGEM DE PERFIL -->
+            <img src="https://placeholder.com/120" alt="Foto de perfil de Kauan" class="profile-pic">
+            <h1>Kauan - Estudante de Desenvolvimento de Sistemas</h1>
+            <p class="subtitle">Bem-vindo à minha primeira página de projetos!</p>
+        </header>
+
+        <main>
+            <section id="sobre" class="card hidden">
+                <h2>Sobre Mim</h2>
+                <p>
+                    Meu nome é <b>Kauan</b> e atualmente estou focado em aprender as tecnologias do desenvolvimento web, como <i>HTML</i> e <i>CSS</i>, na minha formação em <u>Desenvolvimento de Sistemas</u>.
+                </p>
+            </section>
+
+            <section id="interesses" class="card hidden">
+                <h2>Meus Interesses</h2>
+                <ul>
+                    <li>Estudar novas tecnologias</li>
+                    <li>Programar projetos pessoais</li>
+                    <li>Assistir a documentários de tecnologia</li>
+                </ul>
+            </section>
+
+            <section id="metas" class="card hidden">
+                <h2>Minhas Metas</h2>
+                <ol>
+                    <li>Dominar HTML e CSS</li>
+                    <li>Aprender JavaScript para criar interatividade</li>
+                    <li>Construir e publicar meu primeiro site completo</li>
+                </ol>
+            </section>
+
+            <section id="contato" class="card hidden">
+                <h2>Entre em Contato</h2>
+                <p>Tem alguma pergunta ou proposta? Preencha o formulário abaixo.</p>
+                
+                <!-- 2. SUBSTITUA PELA SUA URL ÚNICA DO FORMSPREE -->
+                <form action="https://formspree.io/f/xxxxxxxx" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Seu E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Enviar Mensagem</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            </div>
+            <p>&copy; 2026 - Kauan. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        // --- SCRIPT PARA MENU HAMBURGER (MOBILE) ---
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.getElementById('nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // --- SCRIPT PARA ANIMAÇÃO DE SCROLL (FADE-IN) ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('hidden');
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+
+</body>
+</html>
